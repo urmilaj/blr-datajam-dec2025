@@ -18,7 +18,7 @@ const bees = await FileAttachment("./data/bees_combined_upto_2025.csv").csv();
 
 const wasps = await FileAttachment("./data/wasps_combined_upto_2025.csv").csv();
 
-import { getYearRange, createSparklineChart, getUniqueSpeciesCount } from "./components/utils.js";
+import { getYearRange, createSparklineChart, getUniqueSpeciesCount, getMonthlyObservationCounts, createMonthlyBarChart, getMonthlyObservationsWithData, createInteractiveBrushMap } from "./components/utils.js";
 ```
 
 ```js
@@ -28,6 +28,8 @@ const filteredBees = bees.filter((d) => d.quality_grade === "research")
 
 const filteredWasps = wasps.filter((d) => d.quality_grade === "research")
 
+
+const chartWidth = Generators.width(document.querySelector(".barChartCard"));
 
 const blrMap = topojson.feature(blr, blr.objects.blr);
 const svgWidth = width;
@@ -42,57 +44,63 @@ const path = d3.geoPath(projection);
 
 # Overview
 
-Bangalore's urban ecosystem analysis of pollinators combines data from two data sources: **iNaturalist** for invertebrate pollinators (bees, wasps, moths, and butterflies) and **eBird** for avian pollinators, primarily focusing on nectar-feeding birds (purple sunbirds and pale-billed flowerpeckers) documented through comprehensive citizen science efforts spanning nearly five decades.
+Bangalore's urban ecosystem analysis of pollinators combines data from two data sources: [**iNaturalist**](https://www.inaturalist.org/) for invertebrate pollinators (bees, wasps, moths, and butterflies) and [**eBird**](https://ebird.org/home) for avian pollinators, primarily focusing on nectar-feeding birds (purple sunbirds and pale-billed flowerpeckers) documented through comprehensive citizen science efforts spanning nearly five decades.
 
 <div class="grid grid-cols-4">
   <div class="card">
     <h1 class="card-title">Birds</h1>
     <h2 class="card-subtitle">Family: Nectariniidae</h2>
     <h1 class="card-count">${birds.length.toLocaleString()}</h1> observations between the years ${getYearRange(birds, "OBSERVATION.DATE", d3).min} and ${getYearRange(birds, "OBSERVATION.DATE", d3).max} for <b style="color:#6F73D2">${getUniqueSpeciesCount(birds, "COMMON.NAME")} species</b>
-    <div style="margin-top: 8px;">${createSparklineChart(birds, "OBSERVATION.DATE", width, '#6F73D2')}</div>
+    <div style="margin-top: 15px;">${createSparklineChart(birds, "OBSERVATION.DATE", width, '#6F73D2', 'Trends for nectar-feeding birds')}</div>
   </div>
   <div class="card">
     <h1 class="card-title">Moths and Butterflies</h1>
     <h2 class="card-subtitle">Family: Papilionidae and Nymphalidae</h2>
     <h1 class="card-count">${filteredMothsAndButterflies.length.toLocaleString()}</h1> observations between the years ${getYearRange(filteredMothsAndButterflies, "observed_on", d3).min} and ${getYearRange(filteredMothsAndButterflies, "observed_on", d3).max} for <b style="color:#C04ABC">${getUniqueSpeciesCount(filteredMothsAndButterflies, "common_name")} species</b>
-    <div style="margin-top: 8px;">${createSparklineChart(filteredMothsAndButterflies, "observed_on", width, '#C04ABC')}</div>
+    <div style="margin-top: 15px;">${createSparklineChart(filteredMothsAndButterflies, "observed_on", width, '#C04ABC', 'Trends for moths and butterflies')}</div>
   </div>
   <div class="card">
     <h1 class="card-title">Bees</h1>
     <h2 class="card-subtitle">Super Family: Apoidea</h2>
     <h1 class="card-count">${filteredBees.length.toLocaleString()}</h1> observations between the years ${getYearRange(filteredBees, "observed_on", d3).min} and ${getYearRange(filteredBees, "observed_on", d3).max} for <b style="color:#EA7317">${getUniqueSpeciesCount(filteredBees, "common_name")} species</b>
-    <div style="margin-top: 8px;">${createSparklineChart(filteredBees, "observed_on", width, '#EA7317')}</div>
+    <div style="margin-top: 15px;">${createSparklineChart(filteredBees, "observed_on", width, '#EA7317', 'Trends for bees')}</div>
   </div>
   <div class="card">
     <h1 class="card-title">Wasps</h1>
     <h2 class="card-subtitle">Family: Vespidae</h2>
     <h1 class="card-count">${filteredWasps.length.toLocaleString()}</h1> observations between the years ${getYearRange(filteredWasps, "observed_on", d3).min} and ${getYearRange(filteredWasps, "observed_on", d3).max} for <b style="color:#A8B25D">${getUniqueSpeciesCount(filteredWasps, "common_name")} species</b>
-    <div style="margin-top: 8px;">${createSparklineChart(filteredWasps, "observed_on", width, '#A8B25D')}</div>
+    <div style="margin-top: 15px;">${createSparklineChart(filteredWasps, "observed_on", width, '#A8B25D', 'Trends for wasps')}</div>
   </div>
 </div>
 
-<!-- <div class="grid grid-cols-4">
-  <div class="card">
-    <h1 style="font-size:18px">Birds</h1>
-    <h2 style="font-size:13px">Family: Nectariniidae</h2>
-    <h1 style="display:inline">${birds.length.toLocaleString()}</h1> observations
+---
+
+<div class="grid grid-cols-2">
+  <div>
+    <div class="barChartCard">${createMonthlyBarChart(birds, "OBSERVATION.DATE", chartWidth, '#6F73D2', 'Bird seasonality')}</div>
   </div>
-  <div class="card">
-    <h1 style="font-size:18px">Moths and Butterflies</h1>
-    <h2 style="font-size:13px">Family: Papilionidae and Nymphalidae</h2>
-    <h1 style="display:inline">${moths_and_butterflies.length.toLocaleString()}</h1> observations
+  <!-- <div>
+    <div class="barChartCard">${createMonthlyBarChart(filteredMothsAndButterflies, "observed_on", chartWidth, '#C04ABC', 'Moths and butterflies seasonal patterns')}</div>
   </div>
-  <div class="card">
-    <h1 style="font-size:18px">Bees</h1>
-    <h2 style="font-size:13px">Super Family: Apoidea</h2>
-    <h1 style="display:inline">${bees.length.toLocaleString()}</h1> observations
+  <div>
+    <div class="barChartCard">${createMonthlyBarChart(filteredBees, "observed_on", chartWidth, '#EA7317', 'Bee seasonal patterns')}</div>
   </div>
-  <div class="card">
-    <h1 style="font-size:18px">Wasps</h1>
-    <h2 style="font-size:13px">Family: Vespidae</h2>
-    <h1 style="display:inline">${wasps.length.toLocaleString()}</h1> observations
-  </div>
-</div> -->
+  <div>
+    <div class="barChartCard">${createMonthlyBarChart(filteredWasps, "observed_on", chartWidth, '#A8B25D', 'Wasps seasonal patterns')}</div>
+  </div> -->
+</div>
+
+
+
+
+```js
+getMonthlyObservationsWithData(filteredBees, "observed_on")
+```
+
+```js
+// In your .md file
+view(createInteractiveBrushMap(filteredBees, "observed_on", blr, 800, "#f59e0b", "Bee Observations"))
+```
 
 ```js
 blrMap.features;
