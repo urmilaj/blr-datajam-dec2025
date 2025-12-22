@@ -26,7 +26,7 @@ export default {
   theme: ["dashboard", "light"], // try "light", "dark", "slate", etc.
   // header: "", // what to show in the header (HTML)
   footer: "Bengaluru Biodiversity Datajam 2025", // what to show in the footer (HTML)
-  // sidebar: true, // whether to show the sidebar
+  sidebar: false, // whether to show the sidebar
   // toc: true, // whether to show the table of contents
   // pager: true, // whether to show previous & next links in the footer
   // output: "dist", // path to the output root for build
