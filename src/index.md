@@ -4,7 +4,7 @@ toc: false
 
 <div class="hero">
   <h1>Bengaluru Biodiversity Datajam 2025</h1>
-  <h2>Bindu, Ekansh, Sharath, Tanaya, Vaibhavi, Urmila</h2>
+  <h2>Bindu, Ekansh, Sharath, Tanaya, Tullika, Vaibhavi, Urmila</h2>
 </div>
 
 
