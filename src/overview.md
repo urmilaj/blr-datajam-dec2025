@@ -10,39 +10,20 @@ theme: [dashboard, light]
 
 ```js
 const birds = await FileAttachment("./data/birds_combined_upto_2025.csv").csv()
-const bird_wards = await FileAttachment("./data/birds_with_wards.csv").csv()
 
 const moths_and_butterflies = await FileAttachment("./data/moths_butterflies_research.csv").csv()
-const mothAndButterflies_wards = await FileAttachment("./data/moths_butterflies_research_wards.csv").csv()
 
 const bees = await FileAttachment("./data/bees_research.csv").csv()
-const bees_wards = await FileAttachment("./data/bees_research_wards.csv").csv()
 
 const wasps = await FileAttachment("./data/wasps_research.csv").csv()
-const wasps_wards = await FileAttachment("./data/wasps_research_wards.csv").csv()
 
 import { getYearRange, getUniqueSpeciesCount, createSparklineChart } from "./components/utils.js";
 ```
 
 ```js
-const filteredBirds_wards = bird_wards.filter(d=>d.name_en !== "");
-
 const filteredMothsAndButterflies = moths_and_butterflies;
-const filteredMothsAndButterflies_wards = mothAndButterflies_wards;
 const filteredBees = bees;
-const filteredBees_wards = bees_wards;
 const filteredWasps = wasps;
-const filteredWasps_wards = wasps_wards;
-
-const birdColor = "#6F73D2";
-const mothAndButterflyColor = "#C04ABC";
-const beeColor = "#EA7317";
-const waspColor = "#A8B25D"
-
-const chartWidth = Generators.width(document.querySelector(".barChartCard"));
-
-const svgWidth = width;
-const svgHeight = 800;
 ```
 
 # Overview
