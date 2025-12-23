@@ -135,23 +135,34 @@ export function getMonthlyObservationCounts(data, dateField) {
   return monthlyData;
 }
 
-export function createMonthlyBarChart(data, dateField, width, color, title = "Seasonal observation patterns", height = 350) {
+export function createMonthlyBarChart(data, dateField, width, color, title = "Seasonal observation patterns", height = 350, margins = {}) {
   const monthlyData = getMonthlyObservationCounts(data, dateField);
   
-  if (monthlyData.length === 0) {
-    return Plot.plot({width: width || 300, height: height});
+  if (monthlyData.length === 0 || monthlyData.every(d => d.count === 0)) {
+    return htl.html`<div style="width: 200px; height: ${height}px; margin:auto; display: flex; align-items: center; justify-content: center; border: 1px solid #e0e0e0; border-radius: 4px; background-color: #f9f9f9;">
+      <p style="color: #999; font-size: 14px; margin: auto; text-align:center;">No observations</p>
+    </div>`;
   }
 
   const monthOrder = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+  // Default margins with override option
+  const defaultMargins = {
+    marginBottom: 40,
+    marginTop: 30,
+    marginLeft: 30,
+    marginRight: 10
+  };
+  const finalMargins = { ...defaultMargins, ...margins };
 
   return Plot.plot({
     subtitle: title,
     width: width || 300,
     height: height,
-    marginBottom: 40,
-    marginTop: 30,
-    marginLeft: 30,
-    marginRight: 10,
+    marginBottom: finalMargins.marginBottom,
+    marginTop: finalMargins.marginTop,
+    marginLeft: finalMargins.marginLeft,
+    marginRight: finalMargins.marginRight,
     marks: [
       Plot.barY(monthlyData, {
         x: "monthName", 
