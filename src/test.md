@@ -1,13 +1,6 @@
 ---
-title: Bengaluru Wards
+title: Test
 theme: [dashboard, light]
-toc: false
----
-
-
-##### Team: Bindu, Ekansh, Sharath, Tanaya, Tullika, Vaibhavi, Urmila
-##### Date: December 13, 2025
-
 ---
 
 ```js
@@ -15,33 +8,64 @@ import tippy from "tippy.js";
 ```
 
 ```js
-const blr = await FileAttachment("./data/blr-topo.json").json()
+const blr = await FileAttachment("./data/blr-topo.json").json();
 
-const bird_wards = await FileAttachment("./data/birds_with_wards.csv").csv()
+const birds = await FileAttachment("./data/birds_combined_upto_2025.csv").csv();
+const bird_wards = await FileAttachment("./data/birds_with_wards.csv").csv();
 
-const mothAndButterflies_wards = await FileAttachment("./data/moths_butterflies_research_wards.csv").csv()
+const moths_and_butterflies = await FileAttachment("./data/moths_butterflies_combined_upto_2025.csv").csv();
+const mothAndButterflies_wards = await FileAttachment("./data/mothsAndButterflies_with_wards.csv").csv();
 
-const bees_wards = await FileAttachment("./data/bees_research_wards.csv").csv()
+const bees = await FileAttachment("./data/bees_combined_upto_2025.csv").csv();
+const bees_wards = await FileAttachment("./data/bees_with_wards.csv").csv();
 
-const wasps_wards = await FileAttachment("./data/wasps_research_wards.csv").csv()
+const wasps = await FileAttachment("./data/wasps_combined_upto_2025.csv").csv();
+const wasps_wards = await FileAttachment("./data/wasps_with_wards.csv").csv();
 
-import { getYearRange, createMonthlyBarChart } from "./components/utils.js";
+import { createMonthlyBarChart } from "./components/utils.js";
 ```
+
 
 ```js
 const filteredBirds_wards = bird_wards.filter(d=>d.name_en !== "");
-const filteredMothsAndButterflies_wards = mothAndButterflies_wards;
-const filteredBees_wards = bees_wards;
-const filteredWasps_wards = wasps_wards;
+
+const filteredMothsAndButterflies = moths_and_butterflies.filter((d) => d.quality_grade === "research")
+const filteredMothsAndButterflies_wards = mothAndButterflies_wards.filter((d) => d.quality_grade === "research" && d.name_en !== "");
+
+const filteredBees = bees.filter((d) => d.quality_grade === "research")
+const filteredBees_wards = bees_wards.filter((d) => d.quality_grade === "research" && d.name_en !== "");
+
+const filteredWasps = wasps.filter((d) => d.quality_grade === "research")
+const filteredWasps_wards = wasps_wards.filter((d) => d.quality_grade === "research" && d.name_en !== "");
+```
+
+```js
+const mapWidth = 850
+const mapHeight = 800;
 
 const birdColor = "#6F73D2";
 const mothAndButterflyColor = "#C04ABC";
 const beeColor = "#EA7317";
 const waspColor = "#A8B25D"
-
-
-const blrMap = topojson.feature(blr, blr.objects.blr);
 ```
+
+
+
+```js
+const blrMap = topojson.feature(blr, blr.objects.blr);
+
+const projection = d3.geoMercator().fitSize([mapWidth, mapHeight], blrMap);
+
+const path = d3.geoPath(projection)
+
+const obsContainer = Generators.width(document.querySelector(".obsMapContainer"))
+
+const wardContainer = Generators.width(document.querySelector(".obsMapContainer"))
+```
+
+
+
+
 
 ```js
 const wardNames = blrMap.features.map(f => f.properties.name_en);
@@ -50,11 +74,21 @@ const wardWidth = 500;
 const wardHeight = 500;
 ```
 
-# Bengaluru urban ward wise analysis
+<!-- ```js
+const selectedWardFeature = blrMap.features.find(f => f.properties.name_en === selectedWard);
+const wardProjection = d3.geoMercator().fitSize([wardWidth, wardHeight], selectedWardFeature);
+const wardPath = d3.geoPath(wardProjection);
 
-Ward wise analysis of pollinators. The ward maps below are ordered with most observations of pollinators to least. Use the search option below to search for ward names, if it takes too long to scroll or find a ward map data.
+```
 
-<br>
+```js
+svg`<svg width=${wardWidth} height=${wardHeight}>
+    <g>
+        ${svg`<path d=${wardPath(selectedWardFeature)} stroke="gray" fill="white"/>`}
+    </g>
+</svg>`
+``` -->
+
 
 ```js
 function createWardMap({
@@ -206,86 +240,13 @@ html`<div class="grid grid-cols-4">
           })}
           <hr>
           <br>
-          <div>${createMonthlyBarChart(ward.wardBirds, "OBSERVATION.DATE", width, '#6F73D2', `Bird seasonal patterns ${getYearRange(ward.wardBirds, "OBSERVATION.DATE", d3).min} to ${getYearRange(ward.wardBirds, "OBSERVATION.DATE", d3).max}`, 150, {marginLeft: 25, marginRight: 0})}</div><br>
-          <div>${createMonthlyBarChart(ward.wardMoths, "observed_on", width, mothAndButterflyColor, `Moth and Butterfly seasonal patterns ${getYearRange(ward.wardMoths, "observed_on", d3).min} to ${getYearRange(ward.wardMoths, "observed_on", d3).max}`, 150, {marginLeft: 25, marginRight: 0})}</div><br>
-          <div>${createMonthlyBarChart(ward.wardBees, "observed_on", width, beeColor, `Bee seasonal patterns ${getYearRange(ward.wardBees, "observed_on", d3).min} to ${getYearRange(ward.wardBees, "observed_on", d3).max}`, 150, {marginLeft: 25, marginRight: 0})}</div><br>
-          <div>${createMonthlyBarChart(ward.wardWasps, "observed_on", width, waspColor, `Wasp seasonal patterns ${getYearRange(ward.wardWasps, "observed_on", d3).min} to ${getYearRange(ward.wardWasps, "observed_on", d3).max}`, 150, {marginLeft: 25, marginRight: 0})}</div>
+          <div>${createMonthlyBarChart(ward.wardBirds, "OBSERVATION.DATE", width, '#6F73D2', `Bird seasonal patterns ${getYearRange(ward.wardBirds, "OBSERVATION.DATE", d3).min} to ${getYearRange(ward.wardBirds, "OBSERVATION.DATE", d3).max}`, 150)}</div><br>
+          <div>${createMonthlyBarChart(ward.wardMoths, "observed_on", width, mothAndButterflyColor, `Moth and Butterfly seasonal patterns ${getYearRange(ward.wardMoths, "observed_on", d3).min} to ${getYearRange(ward.wardMoths, "observed_on", d3).max}`, 150)}</div><br>
+          <div>${createMonthlyBarChart(ward.wardBees, "observed_on", width, beeColor, `Bee seasonal patterns ${getYearRange(ward.wardBees, "observed_on", d3).min} to ${getYearRange(ward.wardBees, "observed_on", d3).max}`, 150)}</div><br>
+          <div>${createMonthlyBarChart(ward.wardWasps, "observed_on", width, waspColor, `Wasp seasonal patterns ${getYearRange(ward.wardWasps, "observed_on", d3).min} to ${getYearRange(ward.wardWasps, "observed_on", d3).max}`, 150)}</div>
         </div>`;
       });
       return cardWidth;
     })}
 </div>`
 ```
-
-
-
-
-<style>
-    h1, h2, h3, h4, h5, h6, li, p, text, span {
-    font-family: sans-serif;
-  }
-
-    .card-title {
-        font-size: 18px;
-        color: #515151;
-    }
-
-    .card-count {
-        display: inline;
-    }
-
-    .card-subtitle {
-        font-size: 13px;
-        color: #8a8a8aff;
-    }
-
-    .tippy-box[data-theme~='custom'] {
-    background-color: white;
-    border: black 1px solid;
-    color: black;
-    padding: 0.1rem;
-    font-family: 'sans-serif';
-    min-width: 170px;
-}
-
-.tippy-box[data-theme~='custom'][data-placement^='top'] > .tippy-arrow::before {
-    border-top-color: white;
-}
-
-.tippy-box[data-theme~='custom'][data-placement^='bottom'] > .tippy-arrow::before {
-    border-bottom-color: white;
-}
-  
-.tippy-box[data-theme~='custom'][data-placement^='left'] > .tippy-arrow::before {
-    border-left-color: white;
-}
-
-.tippy-box[data-theme~='custom'][data-placement^='right'] > .tippy-arrow::before {
-    border-right-color: white;
-}
-
-  .tippy-box h1 {
-    font-size:1rem;
-    font-weight:bold;
-    padding-bottom:1px;
-  }
-
-  .tippy-box h2 {
-    font-size:0.9rem;
-    font-weight:normal;
-    padding-bottom:1px
-  }
-
-  .tippy-box hr {
-    padding: 0px;
-    border-top: 2px solid black;
-  }
-
-  .tippy-box p {
-    padding: 0px;
-    font-weight:400;
-    margin-top: 1px;
-    margin-bottom: 3px;
-  }
-  
-</style>

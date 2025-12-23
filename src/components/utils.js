@@ -135,7 +135,7 @@ export function getMonthlyObservationCounts(data, dateField) {
   return monthlyData;
 }
 
-export function createMonthlyBarChart(data, dateField, width, color, title = "Seasonal observation patterns", height = 350) {
+export function createMonthlyBarChart(data, dateField, width, color, title = "Seasonal observation patterns", height = 350, margins = {}) {
   const monthlyData = getMonthlyObservationCounts(data, dateField);
   
   if (monthlyData.length === 0) {
@@ -144,14 +144,23 @@ export function createMonthlyBarChart(data, dateField, width, color, title = "Se
 
   const monthOrder = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
+  // Default margins with override option
+  const defaultMargins = {
+    marginBottom: 40,
+    marginTop: 30,
+    marginLeft: 30,
+    marginRight: 10
+  };
+  const finalMargins = { ...defaultMargins, ...margins };
+
   return Plot.plot({
     subtitle: title,
     width: width || 300,
     height: height,
-    marginBottom: 40,
-    marginTop: 30,
-    marginLeft: 30,
-    marginRight: 10,
+    marginBottom: finalMargins.marginBottom,
+    marginTop: finalMargins.marginTop,
+    marginLeft: finalMargins.marginLeft,
+    marginRight: finalMargins.marginRight,
     marks: [
       Plot.barY(monthlyData, {
         x: "monthName", 

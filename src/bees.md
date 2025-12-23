@@ -94,7 +94,7 @@ const beeTableMapData = Generators.input(beeTable);
     })}</div>
     </div>
     <div class="card">
-      <div class="barChartCard">${createMonthlyBarChart(filteredBees, "observed_on", chartWidth, beeColor, 'Bee seasonal patterns 2005 to 2025', 350)}</div>
+      <div class="barChartCard">${createMonthlyBarChart(filteredBees, "observed_on", chartWidth, beeColor, 'Bee seasonal patterns 2005 to 2025', 350, {marginLeft: 50})}</div>
     </div>
     <div class="card">
       <p style="margin:0 0 2px 0; font-size:20px; font-weight:bold;">Bees observation detailed table</p>

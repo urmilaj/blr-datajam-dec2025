@@ -94,7 +94,7 @@ The data below primarily focuses on nectar-feeding birds, specifically purple su
     })}</div>
     </div>
     <div class="card">
-      <div class="barChartCard">${createMonthlyBarChart(birds, "OBSERVATION.DATE", chartWidth, '#6F73D2', 'Bird seasonal patterns 1979 to 2025', 350)}</div>
+      <div class="barChartCard">${createMonthlyBarChart(birds, "OBSERVATION.DATE", chartWidth, '#6F73D2', 'Bird seasonal patterns 1979 to 2025', 350, {marginLeft: 50})}</div>
     </div>
     <div class="card">
       <p style="margin:0 0 2px 0; font-size:20px; font-weight:bold;">Birds' observation detailed table</p>

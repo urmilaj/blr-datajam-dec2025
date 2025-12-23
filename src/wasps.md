@@ -93,7 +93,7 @@ const waspTableMapData = Generators.input(waspTable);
     })}</div>
     </div>
     <div class="card">
-      <div class="barChartCard">${createMonthlyBarChart(wasps, "observed_on", chartWidth, waspColor, 'Wasp seasonal patterns 2007 to 2025', 350)}</div>
+      <div class="barChartCard">${createMonthlyBarChart(wasps, "observed_on", chartWidth, waspColor, 'Wasp seasonal patterns 2007 to 2025', 350, {marginLeft: 50})}</div>
     </div>
     <div class="card">
       <p style="margin:0 0 2px 0; font-size:20px; font-weight:bold;">Wasps observation detailed table</p>

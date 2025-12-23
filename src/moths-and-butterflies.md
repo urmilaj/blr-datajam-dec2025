@@ -94,7 +94,7 @@ const mothAndButterflyTableMapData = Generators.input(mothAndButterflyTable);
     })}</div>
     </div>
     <div class="card">
-      <div class="barChartCard">${createMonthlyBarChart(moths_and_butterflies, "observed_on", chartWidth, mothAndButterflyColor, 'Moth and Butterfly seasonal patterns 2001 to 2025', 350)}</div>
+      <div class="barChartCard">${createMonthlyBarChart(moths_and_butterflies, "observed_on", chartWidth, mothAndButterflyColor, 'Moth and Butterfly seasonal patterns 2001 to 2025', 350, {marginLeft: 50})}</div>
     </div>
     <div class="card">
       <p style="margin:0 0 2px 0; font-size:20px; font-weight:bold;">Moths and Butterflies observation detailed table</p>

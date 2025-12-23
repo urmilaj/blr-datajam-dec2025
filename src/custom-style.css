@@ -1,0 +1,53 @@
+    @import url("observablehq:default.css");
+@import url("observablehq:theme-air.css");
+
+    
+    
+  .tippy-box[data-theme~='custom'] {
+    background-color: white;
+    border: black 1px solid;
+    color: black;
+    padding: 0.1rem;
+    font-family: 'sans-serif';
+    min-width: 170px;
+}
+
+.tippy-box[data-theme~='custom'][data-placement^='top'] > .tippy-arrow::before {
+    border-top-color: white;
+}
+
+.tippy-box[data-theme~='custom'][data-placement^='bottom'] > .tippy-arrow::before {
+    border-bottom-color: white;
+}
+  
+.tippy-box[data-theme~='custom'][data-placement^='left'] > .tippy-arrow::before {
+    border-left-color: white;
+}
+
+.tippy-box[data-theme~='custom'][data-placement^='right'] > .tippy-arrow::before {
+    border-right-color: white;
+}
+
+  .tippy-box h1 {
+    font-size:1rem;
+    font-weight:bold;
+    padding-bottom:1px;
+  }
+
+  .tippy-box h2 {
+    font-size:0.9rem;
+    font-weight:normal;
+    padding-bottom:1px
+  }
+
+  .tippy-box hr {
+    padding: 0px;
+    border-top: 2px solid black;
+  }
+
+  .tippy-box p {
+    padding: 0px;
+    font-weight:400;
+    margin-top: 1px;
+    margin-bottom: 3px;
+  }
