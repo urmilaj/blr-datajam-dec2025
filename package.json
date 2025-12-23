@@ -5,7 +5,7 @@
     "clean": "rimraf src/.observablehq/cache",
     "build": "rimraf dist && observable build && touch dist/.nojekyll",
     "dev": "observable preview",
-    "deploy": "git subtree push --prefix dist origin gh-pages",
+    "deploy": "git add -f dist/ && git commit -m 'Update build for deployment' && git subtree push --prefix dist origin gh-pages",
     "observable": "observable"
   },
   "dependencies": {
