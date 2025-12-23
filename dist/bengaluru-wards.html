@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="generator" content="Observable Framework v1.13.3">
+<title>Bengaluru Wards | Bengaluru Biodiversity Datajam 2025</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&amp;display=swap" crossorigin>
+<link rel="preload" as="style" href="./_observablehq/theme-air,alt,wide.bef6cc26.css">
+<link rel="preload" as="style" href="./_observablehq/stdlib/inputs.ea9fd553.css">
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&amp;display=swap" crossorigin>
+<link rel="stylesheet" type="text/css" href="./_observablehq/theme-air,alt,wide.bef6cc26.css">
+<link rel="stylesheet" type="text/css" href="./_observablehq/stdlib/inputs.ea9fd553.css">
+<link rel="modulepreload" href="./_observablehq/client.b670ca93.js">
+<link rel="modulepreload" href="./_observablehq/runtime.e080113b.js">
+<link rel="modulepreload" href="./_observablehq/stdlib.73a8ec5a.js">
+<link rel="modulepreload" href="./_node/tippy.js@6.3.7/index.00c267a1.js">
+<link rel="modulepreload" href="./_import/components/utils.85626ec4.js">
+<link rel="modulepreload" href="./_npm/d3@7.9.0/e780feca.js">
+<link rel="modulepreload" href="./_npm/htl@0.3.1/72f4716c.js">
+<link rel="modulepreload" href="./_observablehq/stdlib/inputs.4ef1d259.js">
+<link rel="modulepreload" href="./_npm/topojson-client@3.1.0/edd9ee95.js">
+<link rel="modulepreload" href="./_npm/@observablehq/plot@0.6.17/d761ef9b.js">
+<link rel="modulepreload" href="./_npm/d3-dsv@3.0.1/9cffc2bd.js">
+<link rel="modulepreload" href="./_npm/isoformat@0.2.1/18cbf477.js">
+<link rel="modulepreload" href="./_node/@popperjs/core@2.11.8/index.891b62fb.js">
+<link rel="modulepreload" href="./_npm/d3-array@3.2.4/e93ca09f.js">
+<link rel="modulepreload" href="./_npm/d3-axis@3.0.0/0f2de24d.js">
+<link rel="modulepreload" href="./_npm/d3-brush@3.0.0/65eb105b.js">
+<link rel="modulepreload" href="./_npm/d3-chord@3.0.1/7ef8fb2e.js">
+<link rel="modulepreload" href="./_npm/d3-color@3.1.0/aeb57b94.js">
+<link rel="modulepreload" href="./_npm/d3-contour@4.0.2/1d2aed74.js">
+<link rel="modulepreload" href="./_npm/d3-delaunay@6.0.4/5ced1d52.js">
+<link rel="modulepreload" href="./_npm/d3-dispatch@3.0.1/9ba9c7f3.js">
+<link rel="modulepreload" href="./_npm/d3-drag@3.0.0/4202580c.js">
+<link rel="modulepreload" href="./_npm/d3-ease@3.0.1/cdd7e898.js">
+<link rel="modulepreload" href="./_npm/d3-fetch@3.0.1/b4e2ad9a.js">
+<link rel="modulepreload" href="./_npm/d3-force@3.0.0/5e804d15.js">
+<link rel="modulepreload" href="./_npm/d3-format@3.1.0/86074ef6.js">
+<link rel="modulepreload" href="./_npm/d3-geo@3.1.1/40599fb3.js">
+<link rel="modulepreload" href="./_npm/d3-hierarchy@3.1.2/e49e792c.js">
+<link rel="modulepreload" href="./_npm/d3-interpolate@3.0.1/8d1e5425.js">
+<link rel="modulepreload" href="./_npm/d3-path@3.1.0/20d3f133.js">
+<link rel="modulepreload" href="./_npm/d3-polygon@3.0.1/7553081f.js">
+<link rel="modulepreload" href="./_npm/d3-quadtree@3.0.1/0dfd751c.js">
+<link rel="modulepreload" href="./_npm/d3-random@3.0.1/3c90ee06.js">
+<link rel="modulepreload" href="./_npm/d3-scale@4.0.2/843b6a76.js">
+<link rel="modulepreload" href="./_npm/d3-scale-chromatic@3.1.0/ba24c2e7.js">
+<link rel="modulepreload" href="./_npm/d3-selection@3.0.0/4d94e5b7.js">
+<link rel="modulepreload" href="./_npm/d3-shape@3.2.0/6d3a6726.js">
+<link rel="modulepreload" href="./_npm/d3-time@3.1.0/9f03c579.js">
+<link rel="modulepreload" href="./_npm/d3-time-format@4.1.0/07c9626f.js">
+<link rel="modulepreload" href="./_npm/d3-timer@3.0.1/b58a267d.js">
+<link rel="modulepreload" href="./_npm/d3-transition@3.0.1/004da2ac.js">
+<link rel="modulepreload" href="./_npm/d3-zoom@3.0.0/b5786b3f.js">
+<link rel="modulepreload" href="./_npm/interval-tree-1d@1.0.4/53fe8176.js">
+<link rel="modulepreload" href="./_npm/internmap@2.0.3/e08981d9.js">
+<link rel="modulepreload" href="./_npm/delaunator@5.0.1/02d43215.js">
+<link rel="modulepreload" href="./_npm/binary-search-bounds@2.0.5/cbf6ba23.js">
+<link rel="modulepreload" href="./_npm/robust-predicates@3.0.2/aa00730b.js">
+<link rel="icon" href="./_file/observable.1af93621.png" type="image/png" sizes="32x32">
+<script type="module">
+
+import {define} from "./_observablehq/client.b670ca93.js";
+import {registerFile} from "./_observablehq/stdlib.73a8ec5a.js";
+
+registerFile("./data/bees_research_wards.csv", {"name":"./data/bees_research_wards.csv","mimeType":"text/csv","path":"./_file/data/bees_research_wards.761a8113.csv","lastModified":1766433443553,"size":446704});
+registerFile("./data/birds_with_wards.csv", {"name":"./data/birds_with_wards.csv","mimeType":"text/csv","path":"./_file/data/birds_with_wards.08b3161c.csv","lastModified":1766433360552,"size":17247765});
+registerFile("./data/blr-topo.json", {"name":"./data/blr-topo.json","mimeType":"application/json","path":"./_file/data/blr-topo.fce5e196.json","lastModified":1766249732087,"size":696337});
+registerFile("./data/moths_butterflies_research_wards.csv", {"name":"./data/moths_butterflies_research_wards.csv","mimeType":"text/csv","path":"./_file/data/moths_butterflies_research_wards.4400a4c0.csv","lastModified":1766433443037,"size":7709923});
+registerFile("./data/wasps_research_wards.csv", {"name":"./data/wasps_research_wards.csv","mimeType":"text/csv","path":"./_file/data/wasps_research_wards.1bcc97ba.csv","lastModified":1766433443766,"size":275357});
+
+define({id: "0e8ef331", outputs: ["tippy"], body: async () => {
+const {default: tippy} = await import("./_node/tippy.js@6.3.7/index.00c267a1.js");
+
+return {tippy};
+}});
+
+define({id: "bc7741b9", inputs: ["FileAttachment"], outputs: ["blr","bird_wards","mothAndButterflies_wards","bees_wards","wasps_wards","getYearRange","createMonthlyBarChart"], body: async (FileAttachment) => {
+const {getYearRange, createMonthlyBarChart} = await import("./_import/components/utils.85626ec4.js");
+const blr = await FileAttachment("./data/blr-topo.json").json()
+
+const bird_wards = await FileAttachment("./data/birds_with_wards.csv").csv()
+
+const mothAndButterflies_wards = await FileAttachment("./data/moths_butterflies_research_wards.csv").csv()
+
+const bees_wards = await FileAttachment("./data/bees_research_wards.csv").csv()
+
+const wasps_wards = await FileAttachment("./data/wasps_research_wards.csv").csv()
+
+
+return {blr,bird_wards,mothAndButterflies_wards,bees_wards,wasps_wards,getYearRange,createMonthlyBarChart};
+}});
+
+define({id: "99555db6", inputs: ["bird_wards","mothAndButterflies_wards","bees_wards","wasps_wards","topojson","blr"], outputs: ["filteredBirds_wards","filteredMothsAndButterflies_wards","filteredBees_wards","filteredWasps_wards","birdColor","mothAndButterflyColor","beeColor","waspColor","blrMap"], body: (bird_wards,mothAndButterflies_wards,bees_wards,wasps_wards,topojson,blr) => {
+const filteredBirds_wards = bird_wards.filter(d=>d.name_en !== "");
+const filteredMothsAndButterflies_wards = mothAndButterflies_wards;
+const filteredBees_wards = bees_wards;
+const filteredWasps_wards = wasps_wards;
+
+const birdColor = "#6F73D2";
+const mothAndButterflyColor = "#C04ABC";
+const beeColor = "#EA7317";
+const waspColor = "#A8B25D"
+
+
+const blrMap = topojson.feature(blr, blr.objects.blr);
+return {filteredBirds_wards,filteredMothsAndButterflies_wards,filteredBees_wards,filteredWasps_wards,birdColor,mothAndButterflyColor,beeColor,waspColor,blrMap};
+}});
+
+define({id: "7ab69fc0", inputs: ["blrMap"], outputs: ["wardNames","wardWidth","wardHeight"], body: (blrMap) => {
+const wardNames = blrMap.features.map(f => f.properties.name_en);
+
+const wardWidth = 500;
+const wardHeight = 500;
+return {wardNames,wardWidth,wardHeight};
+}});
+
+define({id: "b3448da1", inputs: ["d3","htl","tippy"], outputs: ["createWardMap"], body: (d3,htl,tippy) => {
+function createWardMap({
+  wardFeature,
+  width = 300,
+  height = 300,
+  data = [],
+  dataConfig = []
+}) {
+  const projection = d3.geoMercator().fitSize([width, height], wardFeature);
+  const path = d3.geoPath(projection);
+  
+  const createTooltip = (d, fields) => {
+    if (!fields || Object.keys(fields).length === 0) {
+      return '<div style="padding: 5px;"><p>No data</p></div>';
+    }
+    const rows = Object.entries(fields)
+      .map(([label, field]) => `<p><strong>${label}:</strong> ${d[field] || 'N/A'}</p>`)
+      .join('');
+    return `<div style="padding: 5px;">${rows}</div>`;
+  };
+
+  const svg = htl.svg`<svg width="${width}" height="${height}">
+    <g>
+      ${htl.svg`<path d="${path(wardFeature)}" stroke="gray" fill="white" stroke-width="1.5"></path>`}
+    </g>
+    ${dataConfig.map(config => htl.svg`<g>
+      ${config.data.map(d => {
+        const coords = projection([d[config.longitudeField], d[config.latitudeField]]);
+        if (!coords || isNaN(coords[0]) || isNaN(coords[1])) return '';
+        return htl.svg`<circle 
+          cx="${coords[0]}" 
+          cy="${coords[1]}" 
+          r="${config.radius || 3}" 
+          fill="${config.color}" 
+          opacity="${config.opacity || 0.6}"
+          style="cursor: pointer;"
+          data-tippy-content="${createTooltip(d, config.tooltipFields).replace(/"/g, '&quot;')}">
+        </circle>`;
+      })}
+    </g>`)}
+  </svg>`;
+  
+  setTimeout(() => {
+    tippy(svg.querySelectorAll('circle[data-tippy-content]'), {
+      allowHTML: true,
+      theme: "custom",
+      arrow: true,
+      placement: "top"
+    });
+  }, 100);
+  
+  return svg;
+}
+return {createWardMap};
+}});
+
+define({id: "1d61efc1", outputs: ["wardCardHeight"], body: () => {
+const wardCardHeight = 250;
+return {wardCardHeight};
+}});
+
+define({id: "bd279222", inputs: ["wardNames","blrMap","filteredBirds_wards","filteredMothsAndButterflies_wards","filteredBees_wards","filteredWasps_wards"], outputs: ["allWardsData"], body: (wardNames,blrMap,filteredBirds_wards,filteredMothsAndButterflies_wards,filteredBees_wards,filteredWasps_wards) => {
+const allWardsData = wardNames
+    .map(wardName => {
+      const wardFeature = blrMap.features.find(f => f.properties.name_en === wardName);
+      const wardBirds = filteredBirds_wards.filter(d => d.name_en === wardName);
+      const wardMoths = filteredMothsAndButterflies_wards.filter(d => d.name_en === wardName);
+      const wardBees = filteredBees_wards.filter(d => d.name_en === wardName);
+      const wardWasps = filteredWasps_wards.filter(d => d.name_en === wardName);
+      
+      const totalObs = wardBirds.length + wardMoths.length + wardBees.length + wardWasps.length;
+      
+      return {
+        wardName,
+        wardFeature,
+        wardBirds,
+        wardMoths,
+        wardBees,
+        wardWasps,
+        totalObs
+      };
+    })
+    .sort((a, b) => b.totalObs - a.totalObs);
+return {allWardsData};
+}});
+
+define({id: "35eb6399", inputs: ["Inputs","allWardsData","Generators"], outputs: ["wardSearchInput","filteredWards"], body: (Inputs,allWardsData,Generators) => {
+const wardSearchInput = Inputs.search(allWardsData, {
+  placeholder: "Search wards by name..."
+});
+
+const filteredWards = Generators.input(wardSearchInput);
+return {wardSearchInput,filteredWards};
+}});
+
+define({id: "3840acea", mode: "inline", inputs: ["wardSearchInput","display"], body: async (wardSearchInput,display) => {
+display(await(
+wardSearchInput
+))
+}});
+
+define({id: "c32d3b73", inputs: ["html","filteredWards","resize","createWardMap","wardCardHeight","birdColor","mothAndButterflyColor","beeColor","waspColor","createMonthlyBarChart","getYearRange","d3","display"], body: async (html,filteredWards,resize,createWardMap,wardCardHeight,birdColor,mothAndButterflyColor,beeColor,waspColor,createMonthlyBarChart,getYearRange,d3,display) => {
+display(await(
+html`<div class="grid grid-cols-4">
+  ${filteredWards
+    .map(ward => {
+      const cardWidth = resize((width) => {
+        const effectiveWidth = Math.max(250, width - 40); // Account for card padding
+        return html`<div class="card">
+          <h2 style="font-size: 14px; margin-bottom: 5px;">${ward.wardName}</h2>
+          <p style="font-size: 11px; color: #666; margin-bottom: 10px;">${ward.totalObs.toLocaleString()} observations</p>
+          ${createWardMap({
+            wardFeature: ward.wardFeature,
+            width: effectiveWidth,
+            height: wardCardHeight,
+            dataConfig: [
+              {
+                data: ward.wardBirds,
+                color: birdColor,
+                longitudeField: "LONGITUDE",
+                latitudeField: "LATITUDE",
+                radius: 3,
+                opacity: 0.5,
+                tooltipFields: { "Species": "COMMON.NAME", "Locality": "LOCALITY" }
+              },
+              {
+                data: ward.wardMoths,
+                color: mothAndButterflyColor,
+                longitudeField: "longitude",
+                latitudeField: "latitude",
+                radius: 3,
+                opacity: 0.5,
+                tooltipFields: { "Species": "common_name", "Date": "observed_on" }
+              },
+              {
+                data: ward.wardBees,
+                color: beeColor,
+                longitudeField: "longitude",
+                latitudeField: "latitude",
+                radius: 3,
+                opacity: 0.5,
+                tooltipFields: { "Species": "common_name", "Date": "observed_on" }
+              },
+              {
+                data: ward.wardWasps,
+                color: waspColor,
+                longitudeField: "longitude",
+                latitudeField: "latitude",
+                radius: 3,
+                opacity: 0.5,
+                tooltipFields: { "Species": "common_name", "Date": "observed_on" }
+              }
+            ]
+          })}
+          <hr>
+          <br>
+          <div>${createMonthlyBarChart(ward.wardBirds, "OBSERVATION.DATE", width, '#6F73D2', `Bird seasonal patterns ${getYearRange(ward.wardBirds, "OBSERVATION.DATE", d3).min} to ${getYearRange(ward.wardBirds, "OBSERVATION.DATE", d3).max}`, 150, {marginLeft: 25, marginRight: 0})}</div><br>
+          <div>${createMonthlyBarChart(ward.wardMoths, "observed_on", width, mothAndButterflyColor, `Moth and Butterfly seasonal patterns ${getYearRange(ward.wardMoths, "observed_on", d3).min} to ${getYearRange(ward.wardMoths, "observed_on", d3).max}`, 150, {marginLeft: 25, marginRight: 0})}</div><br>
+          <div>${createMonthlyBarChart(ward.wardBees, "observed_on", width, beeColor, `Bee seasonal patterns ${getYearRange(ward.wardBees, "observed_on", d3).min} to ${getYearRange(ward.wardBees, "observed_on", d3).max}`, 150, {marginLeft: 25, marginRight: 0})}</div><br>
+          <div>${createMonthlyBarChart(ward.wardWasps, "observed_on", width, waspColor, `Wasp seasonal patterns ${getYearRange(ward.wardWasps, "observed_on", d3).min} to ${getYearRange(ward.wardWasps, "observed_on", d3).max}`, 150, {marginLeft: 25, marginRight: 0})}</div>
+        </div>`;
+      });
+      return cardWidth;
+    })}
+</div>`
+))
+}});
+
+</script>
+</head>
+<body>
+<input id="observablehq-sidebar-toggle" type="checkbox" title="Toggle sidebar">
+<label id="observablehq-sidebar-backdrop" for="observablehq-sidebar-toggle"></label>
+<nav id="observablehq-sidebar">
+  <ol>
+    <label id="observablehq-sidebar-close" for="observablehq-sidebar-toggle"></label>
+    <li class="observablehq-link"><a href="./">Bengaluru Biodiversity Datajam 2025</a></li>
+  </ol>
+  <ol>
+    <li class="observablehq-link"><a href="./overview">Overview</a></li>
+    <li class="observablehq-link"><a href="./birds">Birds analysis</a></li>
+    <li class="observablehq-link"><a href="./moths-and-butterflies">Moths and Butterflies analysis</a></li>
+    <li class="observablehq-link"><a href="./bees">Bees analysis</a></li>
+    <li class="observablehq-link"><a href="./wasps">Wasps analysis</a></li>
+    <li class="observablehq-link observablehq-link-active"><a href="./bengaluru-wards">Bengaluru ward-wise analysis</a></li>
+  </ol>
+</nav>
+<script>{const e=document.querySelector("#observablehq-sidebar"),o=document.querySelector("#observablehq-sidebar-toggle"),r=sessionStorage.getItem("observablehq-sidebar");r?o.checked=r==="true":o.indeterminate=!0;for(const t of document.querySelectorAll("#observablehq-sidebar summary")){const s=t.parentElement;switch(sessionStorage.getItem(`observablehq-sidebar:${t.textContent}`)){case"true":s.open=!0;break;case"false":s.classList.contains("observablehq-section-active")||(s.open=!1);break}}addEventListener("beforeunload",()=>sessionStorage.setItem("observablehq-sidebar-scrolly",`${e.scrollTop}`));const a=sessionStorage.getItem("observablehq-sidebar-scrolly");a!=null&&(e.style.cssText="overflow: hidden;",e.scrollTop=+a,e.style.cssText="");}</script>
+<div id="observablehq-center">
+<main id="observablehq-main" class="observablehq">
+<h5 id="team-bindu-ekansh-sharath-tanaya-tullika-vaibhavi-urmila" tabindex="-1">Team: Bindu, Ekansh, Sharath, Tanaya, Tullika, Vaibhavi, Urmila</h5>
+<h5 id="date-december-13-2025" tabindex="-1">Date: December 13, 2025</h5>
+<hr>
+<div class="observablehq observablehq--block"><!--:0e8ef331:--></div>
+<div class="observablehq observablehq--block"><!--:bc7741b9:--></div>
+<div class="observablehq observablehq--block"><!--:99555db6:--></div>
+<div class="observablehq observablehq--block"><!--:7ab69fc0:--></div>
+<h1 id="bengaluru-urban-ward-wise-analysis" tabindex="-1"><a class="observablehq-header-anchor" href="#bengaluru-urban-ward-wise-analysis">Bengaluru urban ward wise analysis</a></h1>
+<p>Ward wise analysis of pollinators. The ward maps below are ordered with most observations of pollinators to least. Use the search option below to search for ward names, if it takes too long to scroll or find a ward map data.</p>
+<br>
+<div class="observablehq observablehq--block"><!--:b3448da1:--></div>
+<div class="observablehq observablehq--block"><!--:1d61efc1:--></div>
+<div class="observablehq observablehq--block"><!--:bd279222:--></div>
+<div class="observablehq observablehq--block"><!--:35eb6399:--></div>
+<div style="margin-bottom: 20px;"><observablehq-loading></observablehq-loading><!--:3840acea:--></div>
+<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:c32d3b73:--></div>
+<style>
+    h1, h2, h3, h4, h5, h6, li, p, text, span {
+    font-family: sans-serif;
+  }
+
+    .card-title {
+        font-size: 18px;
+        color: #515151;
+    }
+
+    .card-count {
+        display: inline;
+    }
+
+    .card-subtitle {
+        font-size: 13px;
+        color: #8a8a8aff;
+    }
+
+    .tippy-box[data-theme~='custom'] {
+    background-color: white;
+    border: black 1px solid;
+    color: black;
+    padding: 0.1rem;
+    font-family: 'sans-serif';
+    min-width: 170px;
+}
+
+.tippy-box[data-theme~='custom'][data-placement^='top'] > .tippy-arrow::before {
+    border-top-color: white;
+}
+
+.tippy-box[data-theme~='custom'][data-placement^='bottom'] > .tippy-arrow::before {
+    border-bottom-color: white;
+}
+  
+.tippy-box[data-theme~='custom'][data-placement^='left'] > .tippy-arrow::before {
+    border-left-color: white;
+}
+
+.tippy-box[data-theme~='custom'][data-placement^='right'] > .tippy-arrow::before {
+    border-right-color: white;
+}
+
+  .tippy-box h1 {
+    font-size:1rem;
+    font-weight:bold;
+    padding-bottom:1px;
+  }
+
+  .tippy-box h2 {
+    font-size:0.9rem;
+    font-weight:normal;
+    padding-bottom:1px
+  }
+
+  .tippy-box hr {
+    padding: 0px;
+    border-top: 2px solid black;
+  }
+
+  .tippy-box p {
+    padding: 0px;
+    font-weight:400;
+    margin-top: 1px;
+    margin-bottom: 3px;
+  }
+  
+</style></main>
+<footer id="observablehq-footer">
+<nav><a rel="prev" href="./wasps"><span>Wasps analysis</span></a></nav>
+<div>Bengaluru Biodiversity Datajam 2025</div>
+</footer>
+</div>
+</body>
+</html>
