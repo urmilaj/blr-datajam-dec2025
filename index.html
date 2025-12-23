@@ -21,6 +21,23 @@ import "./_observablehq/client.b670ca93.js";
 </script>
 </head>
 <body>
+<input id="observablehq-sidebar-toggle" type="checkbox" title="Toggle sidebar">
+<label id="observablehq-sidebar-backdrop" for="observablehq-sidebar-toggle"></label>
+<nav id="observablehq-sidebar">
+  <ol>
+    <label id="observablehq-sidebar-close" for="observablehq-sidebar-toggle"></label>
+    <li class="observablehq-link observablehq-link-active"><a href="./">Bengaluru Biodiversity Datajam 2025</a></li>
+  </ol>
+  <ol>
+    <li class="observablehq-link"><a href="./overview">Overview</a></li>
+    <li class="observablehq-link"><a href="./birds">Birds analysis</a></li>
+    <li class="observablehq-link"><a href="./moths-and-butterflies">Moths and Butterflies analysis</a></li>
+    <li class="observablehq-link"><a href="./bees">Bees analysis</a></li>
+    <li class="observablehq-link"><a href="./wasps">Wasps analysis</a></li>
+    <li class="observablehq-link"><a href="./bengaluru-wards">Bengaluru ward-wise analysis</a></li>
+  </ol>
+</nav>
+<script>{const e=document.querySelector("#observablehq-sidebar"),o=document.querySelector("#observablehq-sidebar-toggle"),r=sessionStorage.getItem("observablehq-sidebar");r?o.checked=r==="true":o.indeterminate=!0;for(const t of document.querySelectorAll("#observablehq-sidebar summary")){const s=t.parentElement;switch(sessionStorage.getItem(`observablehq-sidebar:${t.textContent}`)){case"true":s.open=!0;break;case"false":s.classList.contains("observablehq-section-active")||(s.open=!1);break}}addEventListener("beforeunload",()=>sessionStorage.setItem("observablehq-sidebar-scrolly",`${e.scrollTop}`));const a=sessionStorage.getItem("observablehq-sidebar-scrolly");a!=null&&(e.style.cssText="overflow: hidden;",e.scrollTop=+a,e.style.cssText="");}</script>
 <div id="observablehq-center">
 <main id="observablehq-main" class="observablehq">
 <div class="hero">
@@ -71,7 +88,7 @@ import "./_observablehq/client.b670ca93.js";
 </style>
 </main>
 <footer id="observablehq-footer">
-<nav><a rel="next" href="./pollinators"><span>Pollinators</span></a></nav>
+<nav><a rel="next" href="./overview"><span>Overview</span></a></nav>
 <div>Bengaluru Biodiversity Datajam 2025</div>
 </footer>
 </div>
