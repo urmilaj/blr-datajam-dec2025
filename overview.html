@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="generator" content="Observable Framework v1.13.3">
+<title>Overview | Bengaluru Biodiversity Datajam 2025</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&amp;display=swap" crossorigin>
+<link rel="preload" as="style" href="./_observablehq/theme-air,alt,wide.bef6cc26.css">
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&amp;display=swap" crossorigin>
+<link rel="stylesheet" type="text/css" href="./_observablehq/theme-air,alt,wide.bef6cc26.css">
+<link rel="modulepreload" href="./_observablehq/client.b670ca93.js">
+<link rel="modulepreload" href="./_observablehq/runtime.e080113b.js">
+<link rel="modulepreload" href="./_observablehq/stdlib.73a8ec5a.js">
+<link rel="modulepreload" href="./_import/components/utils.85626ec4.js">
+<link rel="modulepreload" href="./_npm/d3@7.9.0/e780feca.js">
+<link rel="modulepreload" href="./_npm/@observablehq/plot@0.6.17/d761ef9b.js">
+<link rel="modulepreload" href="./_npm/topojson-client@3.1.0/edd9ee95.js">
+<link rel="modulepreload" href="./_node/tippy.js@6.3.7/index.00c267a1.js">
+<link rel="modulepreload" href="./_npm/htl@0.3.1/72f4716c.js">
+<link rel="modulepreload" href="./_npm/d3-dsv@3.0.1/9cffc2bd.js">
+<link rel="modulepreload" href="./_npm/d3-array@3.2.4/e93ca09f.js">
+<link rel="modulepreload" href="./_npm/d3-axis@3.0.0/0f2de24d.js">
+<link rel="modulepreload" href="./_npm/d3-brush@3.0.0/65eb105b.js">
+<link rel="modulepreload" href="./_npm/d3-chord@3.0.1/7ef8fb2e.js">
+<link rel="modulepreload" href="./_npm/d3-color@3.1.0/aeb57b94.js">
+<link rel="modulepreload" href="./_npm/d3-contour@4.0.2/1d2aed74.js">
+<link rel="modulepreload" href="./_npm/d3-delaunay@6.0.4/5ced1d52.js">
+<link rel="modulepreload" href="./_npm/d3-dispatch@3.0.1/9ba9c7f3.js">
+<link rel="modulepreload" href="./_npm/d3-drag@3.0.0/4202580c.js">
+<link rel="modulepreload" href="./_npm/d3-ease@3.0.1/cdd7e898.js">
+<link rel="modulepreload" href="./_npm/d3-fetch@3.0.1/b4e2ad9a.js">
+<link rel="modulepreload" href="./_npm/d3-force@3.0.0/5e804d15.js">
+<link rel="modulepreload" href="./_npm/d3-format@3.1.0/86074ef6.js">
+<link rel="modulepreload" href="./_npm/d3-geo@3.1.1/40599fb3.js">
+<link rel="modulepreload" href="./_npm/d3-hierarchy@3.1.2/e49e792c.js">
+<link rel="modulepreload" href="./_npm/d3-interpolate@3.0.1/8d1e5425.js">
+<link rel="modulepreload" href="./_npm/d3-path@3.1.0/20d3f133.js">
+<link rel="modulepreload" href="./_npm/d3-polygon@3.0.1/7553081f.js">
+<link rel="modulepreload" href="./_npm/d3-quadtree@3.0.1/0dfd751c.js">
+<link rel="modulepreload" href="./_npm/d3-random@3.0.1/3c90ee06.js">
+<link rel="modulepreload" href="./_npm/d3-scale@4.0.2/843b6a76.js">
+<link rel="modulepreload" href="./_npm/d3-scale-chromatic@3.1.0/ba24c2e7.js">
+<link rel="modulepreload" href="./_npm/d3-selection@3.0.0/4d94e5b7.js">
+<link rel="modulepreload" href="./_npm/d3-shape@3.2.0/6d3a6726.js">
+<link rel="modulepreload" href="./_npm/d3-time@3.1.0/9f03c579.js">
+<link rel="modulepreload" href="./_npm/d3-time-format@4.1.0/07c9626f.js">
+<link rel="modulepreload" href="./_npm/d3-timer@3.0.1/b58a267d.js">
+<link rel="modulepreload" href="./_npm/d3-transition@3.0.1/004da2ac.js">
+<link rel="modulepreload" href="./_npm/d3-zoom@3.0.0/b5786b3f.js">
+<link rel="modulepreload" href="./_npm/isoformat@0.2.1/18cbf477.js">
+<link rel="modulepreload" href="./_npm/interval-tree-1d@1.0.4/53fe8176.js">
+<link rel="modulepreload" href="./_node/@popperjs/core@2.11.8/index.891b62fb.js">
+<link rel="modulepreload" href="./_npm/internmap@2.0.3/e08981d9.js">
+<link rel="modulepreload" href="./_npm/delaunator@5.0.1/02d43215.js">
+<link rel="modulepreload" href="./_npm/binary-search-bounds@2.0.5/cbf6ba23.js">
+<link rel="modulepreload" href="./_npm/robust-predicates@3.0.2/aa00730b.js">
+<link rel="icon" href="./_file/observable.1af93621.png" type="image/png" sizes="32x32">
+<script type="module">
+
+import {define} from "./_observablehq/client.b670ca93.js";
+import {registerFile} from "./_observablehq/stdlib.73a8ec5a.js";
+
+registerFile("./data/bees_research.csv", {"name":"./data/bees_research.csv","mimeType":"text/csv","path":"./_file/data/bees_research.c868903a.csv","lastModified":1766433443436,"size":595277});
+registerFile("./data/birds_combined_upto_2025.csv", {"name":"./data/birds_combined_upto_2025.csv","mimeType":"text/csv","path":"./_file/data/birds_combined_upto_2025.d7e69258.csv","lastModified":1766227405200,"size":16427851});
+registerFile("./data/moths_butterflies_research.csv", {"name":"./data/moths_butterflies_research.csv","mimeType":"text/csv","path":"./_file/data/moths_butterflies_research.79fb204a.csv","lastModified":1766433442650,"size":10395910});
+registerFile("./data/wasps_research.csv", {"name":"./data/wasps_research.csv","mimeType":"text/csv","path":"./_file/data/wasps_research.42f1c51a.csv","lastModified":1766433443662,"size":327173});
+
+define({id: "f394dc87", inputs: ["FileAttachment"], outputs: ["birds","moths_and_butterflies","bees","wasps","getYearRange","getUniqueSpeciesCount","createSparklineChart"], body: async (FileAttachment) => {
+const {getYearRange, getUniqueSpeciesCount, createSparklineChart} = await import("./_import/components/utils.85626ec4.js");
+const birds = await FileAttachment("./data/birds_combined_upto_2025.csv").csv()
+
+const moths_and_butterflies = await FileAttachment("./data/moths_butterflies_research.csv").csv()
+
+const bees = await FileAttachment("./data/bees_research.csv").csv()
+
+const wasps = await FileAttachment("./data/wasps_research.csv").csv()
+
+
+return {birds,moths_and_butterflies,bees,wasps,getYearRange,getUniqueSpeciesCount,createSparklineChart};
+}});
+
+define({id: "8cf881c3", inputs: ["moths_and_butterflies","bees","wasps"], outputs: ["filteredMothsAndButterflies","filteredBees","filteredWasps"], body: (moths_and_butterflies,bees,wasps) => {
+const filteredMothsAndButterflies = moths_and_butterflies;
+const filteredBees = bees;
+const filteredWasps = wasps;
+return {filteredMothsAndButterflies,filteredBees,filteredWasps};
+}});
+
+define({id: "1c87af50", mode: "inline", inputs: ["birds","display"], body: async (birds,display) => {
+display(await(
+birds.length.toLocaleString()
+))
+}});
+
+define({id: "5e6c9ce4", mode: "inline", inputs: ["getYearRange","birds","d3","display"], body: async (getYearRange,birds,d3,display) => {
+display(await(
+getYearRange(birds, "OBSERVATION.DATE", d3).min
+))
+}});
+
+define({id: "37bfb831", mode: "inline", inputs: ["getYearRange","birds","d3","display"], body: async (getYearRange,birds,d3,display) => {
+display(await(
+getYearRange(birds, "OBSERVATION.DATE", d3).max
+))
+}});
+
+define({id: "1b82439b", mode: "inline", inputs: ["getUniqueSpeciesCount","birds","display"], body: async (getUniqueSpeciesCount,birds,display) => {
+display(await(
+getUniqueSpeciesCount(birds, "COMMON.NAME")
+))
+}});
+
+define({id: "c6a610d8", mode: "inline", inputs: ["createSparklineChart","birds","width","display"], body: async (createSparklineChart,birds,width,display) => {
+display(await(
+createSparklineChart(birds, "OBSERVATION.DATE", width, '#6F73D2', 'Trends for nectar-feeding birds')
+))
+}});
+
+define({id: "6c421ef9", mode: "inline", inputs: ["filteredMothsAndButterflies","display"], body: async (filteredMothsAndButterflies,display) => {
+display(await(
+filteredMothsAndButterflies.length.toLocaleString()
+))
+}});
+
+define({id: "944d7300", mode: "inline", inputs: ["getYearRange","filteredMothsAndButterflies","d3","display"], body: async (getYearRange,filteredMothsAndButterflies,d3,display) => {
+display(await(
+getYearRange(filteredMothsAndButterflies, "observed_on", d3).min
+))
+}});
+
+define({id: "0d5c9118", mode: "inline", inputs: ["getYearRange","filteredMothsAndButterflies","d3","display"], body: async (getYearRange,filteredMothsAndButterflies,d3,display) => {
+display(await(
+getYearRange(filteredMothsAndButterflies, "observed_on", d3).max
+))
+}});
+
+define({id: "4c59074f", mode: "inline", inputs: ["getUniqueSpeciesCount","filteredMothsAndButterflies","display"], body: async (getUniqueSpeciesCount,filteredMothsAndButterflies,display) => {
+display(await(
+getUniqueSpeciesCount(filteredMothsAndButterflies, "common_name")
+))
+}});
+
+define({id: "2095cf83", mode: "inline", inputs: ["createSparklineChart","filteredMothsAndButterflies","width","display"], body: async (createSparklineChart,filteredMothsAndButterflies,width,display) => {
+display(await(
+createSparklineChart(filteredMothsAndButterflies, "observed_on", width, '#C04ABC', 'Trends for moths and butterflies')
+))
+}});
+
+define({id: "c0a851de", mode: "inline", inputs: ["filteredBees","display"], body: async (filteredBees,display) => {
+display(await(
+filteredBees.length.toLocaleString()
+))
+}});
+
+define({id: "1d15f137", mode: "inline", inputs: ["getYearRange","filteredBees","d3","display"], body: async (getYearRange,filteredBees,d3,display) => {
+display(await(
+getYearRange(filteredBees, "observed_on", d3).min
+))
+}});
+
+define({id: "bd64a876", mode: "inline", inputs: ["getYearRange","filteredBees","d3","display"], body: async (getYearRange,filteredBees,d3,display) => {
+display(await(
+getYearRange(filteredBees, "observed_on", d3).max
+))
+}});
+
+define({id: "60248b3b", mode: "inline", inputs: ["getUniqueSpeciesCount","filteredBees","display"], body: async (getUniqueSpeciesCount,filteredBees,display) => {
+display(await(
+getUniqueSpeciesCount(filteredBees, "common_name")
+))
+}});
+
+define({id: "afaa1723", mode: "inline", inputs: ["createSparklineChart","filteredBees","width","display"], body: async (createSparklineChart,filteredBees,width,display) => {
+display(await(
+createSparklineChart(filteredBees, "observed_on", width, '#EA7317', 'Trends for bees')
+))
+}});
+
+define({id: "77b22e73", mode: "inline", inputs: ["filteredWasps","display"], body: async (filteredWasps,display) => {
+display(await(
+filteredWasps.length.toLocaleString()
+))
+}});
+
+define({id: "c4b3b9eb", mode: "inline", inputs: ["getYearRange","filteredWasps","d3","display"], body: async (getYearRange,filteredWasps,d3,display) => {
+display(await(
+getYearRange(filteredWasps, "observed_on", d3).min
+))
+}});
+
+define({id: "d5c820cb", mode: "inline", inputs: ["getYearRange","filteredWasps","d3","display"], body: async (getYearRange,filteredWasps,d3,display) => {
+display(await(
+getYearRange(filteredWasps, "observed_on", d3).max
+))
+}});
+
+define({id: "6edb416a", mode: "inline", inputs: ["getUniqueSpeciesCount","filteredWasps","display"], body: async (getUniqueSpeciesCount,filteredWasps,display) => {
+display(await(
+getUniqueSpeciesCount(filteredWasps, "common_name")
+))
+}});
+
+define({id: "1202e504", mode: "inline", inputs: ["createSparklineChart","filteredWasps","width","display"], body: async (createSparklineChart,filteredWasps,width,display) => {
+display(await(
+createSparklineChart(filteredWasps, "observed_on", width, '#A8B25D', 'Trends for wasps')
+))
+}});
+
+</script>
+</head>
+<body>
+<input id="observablehq-sidebar-toggle" type="checkbox" title="Toggle sidebar">
+<label id="observablehq-sidebar-backdrop" for="observablehq-sidebar-toggle"></label>
+<nav id="observablehq-sidebar">
+  <ol>
+    <label id="observablehq-sidebar-close" for="observablehq-sidebar-toggle"></label>
+    <li class="observablehq-link"><a href="./">Bengaluru Biodiversity Datajam 2025</a></li>
+  </ol>
+  <ol>
+    <li class="observablehq-link observablehq-link-active"><a href="./overview">Overview</a></li>
+    <li class="observablehq-link"><a href="./birds">Birds analysis</a></li>
+    <li class="observablehq-link"><a href="./moths-and-butterflies">Moths and Butterflies analysis</a></li>
+    <li class="observablehq-link"><a href="./bees">Bees analysis</a></li>
+    <li class="observablehq-link"><a href="./wasps">Wasps analysis</a></li>
+    <li class="observablehq-link"><a href="./bengaluru-wards">Bengaluru ward-wise analysis</a></li>
+  </ol>
+</nav>
+<script>{const e=document.querySelector("#observablehq-sidebar"),o=document.querySelector("#observablehq-sidebar-toggle"),r=sessionStorage.getItem("observablehq-sidebar");r?o.checked=r==="true":o.indeterminate=!0;for(const t of document.querySelectorAll("#observablehq-sidebar summary")){const s=t.parentElement;switch(sessionStorage.getItem(`observablehq-sidebar:${t.textContent}`)){case"true":s.open=!0;break;case"false":s.classList.contains("observablehq-section-active")||(s.open=!1);break}}addEventListener("beforeunload",()=>sessionStorage.setItem("observablehq-sidebar-scrolly",`${e.scrollTop}`));const a=sessionStorage.getItem("observablehq-sidebar-scrolly");a!=null&&(e.style.cssText="overflow: hidden;",e.scrollTop=+a,e.style.cssText="");}</script>
+<div id="observablehq-center">
+<aside id="observablehq-toc" data-selector="h1:not(:first-of-type)[id], h2:first-child[id], :not(h1) + h2[id]">
+<nav>
+</nav>
+</aside>
+<main id="observablehq-main" class="observablehq">
+<h5 id="team-bindu-ekansh-sharath-tanaya-tullika-vaibhavi-urmila" tabindex="-1">Team: Bindu, Ekansh, Sharath, Tanaya, Tullika, Vaibhavi, Urmila</h5>
+<h5 id="date-december-13-2025" tabindex="-1">Date: December 13, 2025</h5>
+<hr>
+<div class="observablehq observablehq--block"><!--:f394dc87:--></div>
+<div class="observablehq observablehq--block"><!--:8cf881c3:--></div>
+<h1 id="overview" tabindex="-1"><a class="observablehq-header-anchor" href="#overview">Overview</a></h1>
+<p>Bangalore's urban ecosystem analysis of pollinators combines data from two data sources: <a href="https://www.inaturalist.org/" target="_blank" rel="noopener noreferrer"><strong>iNaturalist</strong></a> for invertebrate pollinators (bees, wasps, moths, and butterflies) and <a href="https://ebird.org/home" target="_blank" rel="noopener noreferrer"><strong>eBird</strong></a> for avian pollinators, primarily focusing on nectar-feeding birds (purple sunbirds and pale-billed flowerpeckers) documented through comprehensive citizen science efforts spanning nearly five decades.</p>
+<div class="grid grid-cols-4">
+  <div class="card">
+    <h1 class="card-title">Birds</h1>
+    <h2 class="card-subtitle">Family: Nectariniidae</h2>
+    <h1 class="card-count"><observablehq-loading></observablehq-loading><!--:1c87af50:--></h1> observations between the years <observablehq-loading></observablehq-loading><!--:5e6c9ce4:--> and <observablehq-loading></observablehq-loading><!--:37bfb831:--> for <b style="color:#6F73D2"><observablehq-loading></observablehq-loading><!--:1b82439b:--> species</b>
+    <div style="margin-top: 15px;"><observablehq-loading></observablehq-loading><!--:c6a610d8:--></div>
+  </div>
+  <div class="card">
+    <h1 class="card-title">Moths and Butterflies</h1>
+    <h2 class="card-subtitle">Family: Papilionidae and Nymphalidae</h2>
+    <h1 class="card-count"><observablehq-loading></observablehq-loading><!--:6c421ef9:--></h1> observations between the years <observablehq-loading></observablehq-loading><!--:944d7300:--> and <observablehq-loading></observablehq-loading><!--:0d5c9118:--> for <b style="color:#C04ABC"><observablehq-loading></observablehq-loading><!--:4c59074f:--> species</b>
+    <div style="margin-top: 15px;"><observablehq-loading></observablehq-loading><!--:2095cf83:--></div>
+  </div>
+  <div class="card">
+    <h1 class="card-title">Bees</h1>
+    <h2 class="card-subtitle">Super Family: Apoidea</h2>
+    <h1 class="card-count"><observablehq-loading></observablehq-loading><!--:c0a851de:--></h1> observations between the years <observablehq-loading></observablehq-loading><!--:1d15f137:--> and <observablehq-loading></observablehq-loading><!--:bd64a876:--> for <b style="color:#EA7317"><observablehq-loading></observablehq-loading><!--:60248b3b:--> species</b>
+    <div style="margin-top: 15px;"><observablehq-loading></observablehq-loading><!--:afaa1723:--></div>
+  </div>
+  <div class="card">
+    <h1 class="card-title">Wasps</h1>
+    <h2 class="card-subtitle">Family: Vespidae</h2>
+    <h1 class="card-count"><observablehq-loading></observablehq-loading><!--:77b22e73:--></h1> observations between the years <observablehq-loading></observablehq-loading><!--:c4b3b9eb:--> and <observablehq-loading></observablehq-loading><!--:d5c820cb:--> for <b style="color:#A8B25D"><observablehq-loading></observablehq-loading><!--:6edb416a:--> species</b>
+    <div style="margin-top: 15px;"><observablehq-loading></observablehq-loading><!--:1202e504:--></div>
+  </div>
+</div>
+<style>
+    h1, h2, h3, h4, h5, h6, li, p, text, span {
+    font-family: sans-serif;
+  }
+
+    .card-title {
+        font-size: 18px;
+        color: #515151;
+    }
+
+    .card-count {
+        display: inline;
+    }
+
+    .card-subtitle {
+        font-size: 13px;
+        color: #8a8a8aff;
+    }
+  
+</style></main>
+<footer id="observablehq-footer">
+<nav><a rel="prev" href="./"><span>Bengaluru Biodiversity Datajam 2025</span></a><a rel="next" href="./birds"><span>Birds analysis</span></a></nav>
+<div>Bengaluru Biodiversity Datajam 2025</div>
+</footer>
+</div>
+</body>
+</html>
